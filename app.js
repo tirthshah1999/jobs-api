@@ -15,9 +15,6 @@ const connectDB = require("./db/connect");
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
 
-app.use(express.json());
-// extra packages
-
 // routes
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/jobs", authMiddleware, jobRouter);  // as all our job routes should be protected
